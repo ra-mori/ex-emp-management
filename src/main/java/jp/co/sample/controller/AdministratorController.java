@@ -9,7 +9,7 @@ import jp.co.sample.form.InsertAdministratorForm;
 import jp.co.sample.service.AdministratorService;
 
 /**
- * 管理者関連処理の制御をおこなう
+ * 管理者関連処理の制御をおこなう.
  * 
  * @author shigeki.morishita
  *
@@ -26,7 +26,7 @@ public class AdministratorController {
 	}
 
 	/**
-	 * administrator/insertへフォワード
+	 * administrator/insertへフォワード.
 	 * 
 	 * @return administrator/insert
 	 */
