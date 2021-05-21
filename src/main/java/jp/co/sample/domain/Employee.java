@@ -1,6 +1,6 @@
 package jp.co.sample.domain;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 /**
  * 従業員情報を表すドメイン
@@ -18,7 +18,7 @@ public class Employee {
 	/** 性別 */
 	private String gender;
 	/** 入社日 */
-	private LocalDate hireDate;
+	private Date hireDate;
 	/** メールアドレス */
 	private String mailAddress;
 	/** 郵便番号 */
@@ -66,11 +66,11 @@ public class Employee {
 		this.gender = gender;
 	}
 
-	public LocalDate getHireDate() {
+	public Date getHireDate() {
 		return hireDate;
 	}
 
-	public void setHireDate(LocalDate hireDate) {
+	public void setHireDate(Date hireDate) {
 		this.hireDate = hireDate;
 	}
 
