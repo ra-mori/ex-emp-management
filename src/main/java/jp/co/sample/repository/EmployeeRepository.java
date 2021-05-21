@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 import jp.co.sample.domain.Employee;
 
 /**
- * employeesテーブルを操作するリポジトリ
+ * employeesテーブルを操作するリポジトリ.
  * 
  * @author shigeki.morishita
  *
@@ -24,6 +24,9 @@ public class EmployeeRepository {
 	private NamedParameterJdbcTemplate template;
 	private static final String TABLE_NAME = "Employees";
 
+	/**
+	 * employeeオブジェクトを生成するローマッパー
+	 */
 	private static final RowMapper<Employee> EMPLOYEE_ROW_MAPPER = (rs, i) -> {
 		Employee employee = new Employee();
 
@@ -74,7 +77,7 @@ public class EmployeeRepository {
 	}
 
 	/**
-	 * メンバー情報を更新
+	 * メンバー情報を更新.
 	 * 
 	 * @param employee
 	 */
