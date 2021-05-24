@@ -66,20 +66,18 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="employee:${employeeList}">
-							<div th:object="${employee}">
-								<td>
-									<a href="detail.html">
-										<span th:text="*{name}">山田太郎</span>
-									</a>
-								</td>
-								<td>
-									<span th:text="*{#dates.format(hireDate,'yyyy/MM/dd')}">2016/12/1</span>
-								</td>
-								<td>
-									<span th:text="*{dependentsCount}">3人</span>
-								</td>
-							</div>
+						<tr th:each="employee:${employeeList}" th:object="${employee}">
+							<td>
+								<a href="detail.html" th:href="@{/employee/showDetail?id=} + *{id}">
+									<span th:text="*{name}">山田太郎</span>
+								</a>
+							</td>
+							<td>
+								<span th:text="*{#dates.format(hireDate,'yyyy/MM/dd')}">2016/12/1</span>
+							</td>
+							<td>
+								<span th:text="*{dependentsCount}">3人</span>
+							</td>
 						</tr>
 					</tbody>
 				</table>

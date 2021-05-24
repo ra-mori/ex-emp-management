@@ -39,7 +39,7 @@ public class EmployeeRepository {
 		employee.setZipCode(rs.getString("zip_code"));
 		employee.setAddress(rs.getString("address"));
 		employee.setTelephone(rs.getString("telephone"));
-		employee.setSalay(rs.getInt("salary"));
+		employee.setSalary(rs.getInt("salary"));
 		employee.setCharacteristics(rs.getString("characteristics"));
 		employee.setDependentsCount(rs.getInt("dependents_count"));
 		return employee;
@@ -66,9 +66,9 @@ public class EmployeeRepository {
 	 * @return メンバー情報(検索されなかった場合は非検査例外が発生します)
 	 */
 	public Employee load(Integer id) {
-		String sql = "SELECT id,name,image,gender,hireDate,mailAddress,zipCode,address,telephone,salay,characteristics,dependentsCount FROM"
-				+ TABLE_NAME + "WHERE id = :id;";
-
+		String sql = "SELECT id,name,image,gender,hire_date,mail_address,zip_code,address,telephone,salary,characteristics,dependents_count FROM "
+				+ TABLE_NAME + " WHERE id = :id;";
+		System.out.println(sql);
 		SqlParameterSource param = new MapSqlParameterSource().addValue("id", id);
 
 		Employee employee = template.queryForObject(sql, param, EMPLOYEE_ROW_MAPPER);
