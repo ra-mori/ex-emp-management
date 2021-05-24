@@ -22,7 +22,7 @@ import jp.co.sample.domain.Administrator;
 public class AdministratorRepository {
 	@Autowired
 	private NamedParameterJdbcTemplate template;
-	private static final String TABLE_NAME = "Administrators";
+	private static final String TABLE_NAME = "administrators";
 
 	/**
 	 * Administratorsオブジェクトを生成するローマッパー
@@ -42,8 +42,8 @@ public class AdministratorRepository {
 	 * @param administrator
 	 */
 	public void insert(Administrator administrator) {
-		String sql = "INSERT INTO" + TABLE_NAME
-				+ "(id,name,mail_address,password) VALUES (:name,:mailAddress,:password);";
+		String sql = "INSERT INTO " + TABLE_NAME
+				+ " (name,mail_address,password) VALUES (:name,:mailAddress,:password);";
 		SqlParameterSource param = new BeanPropertySqlParameterSource(administrator);
 		template.update(sql, param);
 	}
