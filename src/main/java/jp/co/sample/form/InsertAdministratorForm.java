@@ -1,14 +1,17 @@
 package jp.co.sample.form;
 
 /**
- * 管理者登録時に使用するフォーム
+ * 管理者登録時に使用するフォーム.
  * 
  * @author shigeki.morishita
  *
  */
 public class InsertAdministratorForm {
+	/** 名前 */
 	private String name;
+	/** メールアドレス */
 	private String mailAddress;
+	/** パスワード */
 	private String password;
 
 	public String getName() {

@@ -22,7 +22,7 @@ public class AdministratorService {
 	/**
 	 * 管理者情報を挿入する業務処理です.
 	 * 
-	 * @param administrator
+	 * @param administrator 登録したい管理者情報
 	 */
 	public void insert(Administrator administrator) {
 		repository.insert(administrator);
@@ -31,11 +31,11 @@ public class AdministratorService {
 	/**
 	 * ログイン処理を行う.
 	 * 
-	 * @param mailAddress
-	 * @param password
+	 * @param mailAddress メールアドレス
+	 * @param password    パスワード
 	 * @return 管理者情報
 	 */
-	public Administrator findByMailAddressAndPassword(String mailAddress, String password) {
+	public Administrator login(String mailAddress, String password) {
 		return repository.findByMailAddressAndPassword(mailAddress, password);
 	}
 }

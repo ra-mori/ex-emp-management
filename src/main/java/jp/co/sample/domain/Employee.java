@@ -26,7 +26,7 @@ public class Employee {
 	/** 住所 */
 	private String address;
 	/** 電話番号 */
-	private Integer telephone;
+	private String telephone;
 	/** 給料 */
 	private Integer salay;
 	/** 特性 */
@@ -98,11 +98,11 @@ public class Employee {
 		this.address = address;
 	}
 
-	public Integer getTelephone() {
+	public String getTelephone() {
 		return telephone;
 	}
 
-	public void setTelephone(Integer telephone) {
+	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
 
