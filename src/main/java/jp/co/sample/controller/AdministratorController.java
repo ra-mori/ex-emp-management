@@ -109,4 +109,16 @@ public class AdministratorController {
 
 	}
 
+	/**
+	 * ログアウト処理.
+	 * 
+	 * @return ログイン画面に移動
+	 */
+	@RequestMapping("/logout")
+	public String logout() {
+		session.invalidate();
+
+		return "redirect:/";
+	}
+
 }
