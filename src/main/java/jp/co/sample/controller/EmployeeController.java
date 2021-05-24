@@ -33,7 +33,7 @@ public class EmployeeController {
 	 * 従業員一覧情報を出力.
 	 * 
 	 * @param model モデル
-	 * @return 「employee/list.html」へフォワード.
+	 * @return 従業員一覧画面へフォワード
 	 */
 	@RequestMapping("/showList")
 	public String showList(Model model) {
@@ -59,6 +59,24 @@ public class EmployeeController {
 		model.addAttribute("employee", employee);
 
 		return "employee/detail";
+	}
+
+	/**
+	 * 扶養人数を更新する.
+	 * 
+	 * @return 従業員一覧画面へリダイレクト
+	 */
+	@RequestMapping("/update")
+	public String update(UpdateEmployeeForm form) {
+		int updateEmployeeForm_id = Integer.parseInt(form.getId());
+		Employee employee = employeeService.showDetail(updateEmployeeForm_id);
+
+		int update_depCount = Integer.parseInt(form.getDependentsCount());
+		employee.setDependentsCount(update_depCount);
+
+		employeeService.update(employee);
+
+		return "redirect:/employee/showList";
 	}
 
 }

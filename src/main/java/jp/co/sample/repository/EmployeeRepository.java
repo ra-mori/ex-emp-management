@@ -82,8 +82,8 @@ public class EmployeeRepository {
 	 * @param employee
 	 */
 	public void update(Employee employee) {
-		String sql = "UPDATE" + TABLE_NAME + " SET name=:name, image=:image, gender=:gender, hireDate=:hireDate, "
-				+ "mailAddress=:mailAddress, zipCode=:zipCode, address=:address, telephone=:telephone, salay=:salay, characteristics=:characteristics, dependentsCount=:dependentsCount"
+		String sql = "UPDATE " + TABLE_NAME + " SET name=:name, image=:image, gender=:gender, hire_date=:hireDate, "
+				+ " mail_address=:mailAddress, zip_code=:zipCode, address=:address, telephone=:telephone, salary=:salary, characteristics=:characteristics, dependents_count=:dependentsCount "
 				+ " WHERE id=:id;";
 
 		SqlParameterSource param = new BeanPropertySqlParameterSource(employee);
